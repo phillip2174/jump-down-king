@@ -1,0 +1,74 @@
+{
+    "assetLoad": {
+        "files": [
+            {
+                "type": "image",
+                "key": "pillar01",
+                "url": "assets/gameplay/pillar.png"
+            },
+            {
+                "type": "image",
+                "key": "sky",
+                "url": "assets/gameplay/space3.png"
+            },
+            {
+                "type": "image",
+                "key": "ship",
+                "url": "assets/gameplay/fmship.png"
+            },
+            {
+                "type": "image",
+                "key": "pillar02",
+                "url": "assets/gameplay/paillar-non-head.png"
+            },
+            {
+                "type": "multiatlas",
+                "key": "spritesPacker",
+                "atlasURL": "assets/spritesPacker.json",
+                "path": "assets"
+            },
+            {
+                "type": "spritesheet",
+                "key": "nyan_cat",
+                "url": "assets/gameplay/nyan_cat.png",
+                "frameConfig": { "frameWidth": 69.6, "frameHeight": 41 }
+            },
+            {
+                "type": "spritesheet",
+                "key": "coin",
+                "url": "assets/gameplay/coin.png",
+                "frameConfig": { "frameWidth": 32, "frameHeight": 32 }
+            },
+            {
+                "type": "audio",
+                "key": "game_bgm",
+                "url": "assets/sound/nyan_cat_remix.mp3",
+                "autoDecode": true
+            },
+            {
+                "type": "audio",
+                "key": "cat_meow",
+                "url": "assets/sound/cat_meow.mp3",
+                "autoDecode": true
+            },
+            {
+                "type": "audio",
+                "key": "coin_pickup",
+                "url": "assets/sound/coin_pickup.mp3",
+                "autoDecode": true
+            },
+            {
+                "type": "audio",
+                "key": "change_side",
+                "url": "assets/sound/change_side.mp3",
+                "autoDecode": true
+            },
+            {
+                "type": "audio",
+                "key": "game_over",
+                "url": "assets/sound/game_over.mp3",
+                "autoDecode": true
+            }
+        ]
+    }
+}

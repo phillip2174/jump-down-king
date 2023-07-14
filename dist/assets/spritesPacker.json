@@ -1,0 +1,377 @@
+{
+    "textures": [
+        {
+            "image": "spritesPacker.png",
+            "format": "RGBA8888",
+            "size": {
+                "w": 740,
+                "h": 1570
+            },
+            "scale": 1,
+            "frames": [
+                {
+                    "filename": "bg_01.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 738,
+                        "h": 1312
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 738,
+                        "h": 1312
+                    },
+                    "frame": {
+                        "x": 1,
+                        "y": 1,
+                        "w": 738,
+                        "h": 1312
+                    }
+                },
+                {
+                    "filename": "rainbow-pillar.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 86,
+                        "h": 187
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 86,
+                        "h": 187
+                    },
+                    "frame": {
+                        "x": 1,
+                        "y": 1315,
+                        "w": 86,
+                        "h": 187
+                    }
+                },
+                {
+                    "filename": "button-text.png",
+                    "rotated": false,
+                    "trimmed": true,
+                    "sourceSize": {
+                        "w": 300,
+                        "h": 110
+                    },
+                    "spriteSourceSize": {
+                        "x": 106,
+                        "y": 30,
+                        "w": 88,
+                        "h": 47
+                    },
+                    "frame": {
+                        "x": 1,
+                        "y": 1504,
+                        "w": 88,
+                        "h": 47
+                    }
+                },
+                {
+                    "filename": "button-bg.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 300,
+                        "h": 110
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 300,
+                        "h": 110
+                    },
+                    "frame": {
+                        "x": 89,
+                        "y": 1315,
+                        "w": 300,
+                        "h": 110
+                    }
+                },
+                {
+                    "filename": "cockpitBlue_1.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 40,
+                        "h": 40
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 40,
+                        "h": 40
+                    },
+                    "frame": {
+                        "x": 89,
+                        "y": 1427,
+                        "w": 40,
+                        "h": 40
+                    }
+                },
+                {
+                    "filename": "meteorBrown_big2.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 120,
+                        "h": 98
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 120,
+                        "h": 98
+                    },
+                    "frame": {
+                        "x": 91,
+                        "y": 1469,
+                        "w": 120,
+                        "h": 98
+                    }
+                },
+                {
+                    "filename": "cockpitGreen_1.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 40,
+                        "h": 40
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 40,
+                        "h": 40
+                    },
+                    "frame": {
+                        "x": 131,
+                        "y": 1427,
+                        "w": 40,
+                        "h": 40
+                    }
+                },
+                {
+                    "filename": "cockpitRed_1.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 40,
+                        "h": 40
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 40,
+                        "h": 40
+                    },
+                    "frame": {
+                        "x": 173,
+                        "y": 1427,
+                        "w": 40,
+                        "h": 40
+                    }
+                },
+                {
+                    "filename": "meteorGrey_big2.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 120,
+                        "h": 98
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 120,
+                        "h": 98
+                    },
+                    "frame": {
+                        "x": 213,
+                        "y": 1469,
+                        "w": 120,
+                        "h": 98
+                    }
+                },
+                {
+                    "filename": "meteorBrown_big4.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 98,
+                        "h": 96
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 98,
+                        "h": 96
+                    },
+                    "frame": {
+                        "x": 335,
+                        "y": 1427,
+                        "w": 98,
+                        "h": 96
+                    }
+                },
+                {
+                    "filename": "meteorGrey_big4.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 98,
+                        "h": 96
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 98,
+                        "h": 96
+                    },
+                    "frame": {
+                        "x": 391,
+                        "y": 1315,
+                        "w": 98,
+                        "h": 96
+                    }
+                },
+                {
+                    "filename": "star.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 101,
+                        "h": 93
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 101,
+                        "h": 93
+                    },
+                    "frame": {
+                        "x": 435,
+                        "y": 1413,
+                        "w": 101,
+                        "h": 93
+                    }
+                },
+                {
+                    "filename": "ufoRed.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 91,
+                        "h": 91
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 91,
+                        "h": 91
+                    },
+                    "frame": {
+                        "x": 491,
+                        "y": 1315,
+                        "w": 91,
+                        "h": 91
+                    }
+                },
+                {
+                    "filename": "meteorBrown_big1.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 101,
+                        "h": 84
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 101,
+                        "h": 84
+                    },
+                    "frame": {
+                        "x": 584,
+                        "y": 1315,
+                        "w": 101,
+                        "h": 84
+                    }
+                },
+                {
+                    "filename": "meteorGrey_big1.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 101,
+                        "h": 84
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 101,
+                        "h": 84
+                    },
+                    "frame": {
+                        "x": 584,
+                        "y": 1401,
+                        "w": 101,
+                        "h": 84
+                    }
+                },
+                {
+                    "filename": "meteorBrown_big3.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 89,
+                        "h": 82
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 89,
+                        "h": 82
+                    },
+                    "frame": {
+                        "x": 538,
+                        "y": 1487,
+                        "w": 89,
+                        "h": 82
+                    }
+                },
+                {
+                    "filename": "meteorGrey_big3.png",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 89,
+                        "h": 82
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 89,
+                        "h": 82
+                    },
+                    "frame": {
+                        "x": 629,
+                        "y": 1487,
+                        "w": 89,
+                        "h": 82
+                    }
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "app": "https://www.codeandweb.com/texturepacker",
+        "version": "3.0",
+        "smartupdate": "$TexturePacker:SmartUpdate:e18b1f6c2ec654641f32e6c734c354b9:3d95d2775d19d9af85b6da32275e0641:73303284beeb8c9f97498359cbf97c27$"
+    }
+}
