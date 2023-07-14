@@ -16,6 +16,8 @@ export default class CoinCellView extends GameObjects.GameObject {
 
     private coinPickupSoundPlayer: Sound.BaseSound
 
+    private speed: number = 0
+
     constructor(scene: Phaser.Scene) {
         super(scene, 'gameObject')
     }
@@ -55,6 +57,22 @@ export default class CoinCellView extends GameObjects.GameObject {
         this.phaseSubscription = this.gameplayPod.phase.subscribe((phase) => {
             this.coinObject.body.velocity.x = 0
             this.coinObject.body.velocity.y = this.gameplayPod.currentGameConfig.speed
+
+            if (this.speed == 0) {
+                this.coinObject.body.velocity.y = this.gameplayPod.currentGameConfig.speed
+                this.speed = this.gameplayPod.currentGameConfig.speed
+            } else {
+                this.scene.add.tween({
+                    targets: this.coinObject.body.velocity,
+                    ease: 'Quart.easeOut',
+                    yoyo: false,
+                    repeat: 0,
+                    duration: 1800,
+                    props: {
+                        y: { from: this.coinObject.body.velocity.y, to: this.gameplayPod.currentGameConfig.speed },
+                    },
+                })
+            }
         })
     }
 

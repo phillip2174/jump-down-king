@@ -46,6 +46,8 @@ export class MenuGameplayScene extends Phaser.Scene {
         ResourceManager.instance.loadPackJson('assetLoad', `assets/assetLoad.json`).subscribe((_) => {
             this.doInit()
         })
+
+        this.initWindowEvents()
     }
 
     create() {
@@ -56,6 +58,12 @@ export class MenuGameplayScene extends Phaser.Scene {
             .text(UIUtil.getCanvasWidth() / 2, UIUtil.getCanvasHeight() / 2 - 100, 'JUMP DOWN KING', { font: 'Arial' })
             .setOrigin(0.5)
             .setFontSize(50)
+    }
+
+    private initWindowEvents() {
+        window.onresize = () => {
+            window.location.reload()
+        }
     }
 
     update(): void {

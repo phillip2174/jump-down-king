@@ -4,10 +4,12 @@ import { UIUtil } from '../plugins/utils/UIUtil'
 import { PlayerHealthUIView } from './PlayerHealthUIView'
 import { PodProvider } from '../pod/PodProvider'
 import { GameplayUIState } from '../Gameplay/GameplayUIState'
+import { Pod } from '../plugins/objects/Pod'
+import { Subscription } from 'rxjs'
 
 export class PlayerObjectView extends Physics.Arcade.Sprite {
    private static readonly RADIAN_PI: number = 3.14159265359
-   private static readonly MOVE_DURATION: number = 800
+   private playerMoveDuration: number
    private playerObjectPod: PlayerObjectPod
    private playerHealthUIView: PlayerHealthUIView
    private isTweening: boolean = false
@@ -17,6 +19,7 @@ export class PlayerObjectView extends Physics.Arcade.Sprite {
    private playerOnHitSoundPlayer: Sound.BaseSound
    private playerChangeSideSoundPlayer: Sound.BaseSound
    private playerOnDeadSoundPlayer: Sound.BaseSound
+   private gamePhaseSubscription: Subscription = new Subscription()
 
    constructor(scene: Scene, posX: number, posY: number, texture: string, frame: string | number) {
       super(scene, posX, posY, texture, frame)
@@ -35,6 +38,23 @@ export class PlayerObjectView extends Physics.Arcade.Sprite {
    }
 
    private setupSubscribes(): void {
+      this.gamePhaseSubscription = PodProvider.instance.gamePlayPod.phase.subscribe((currPhase) => {
+         switch (currPhase) {
+            case 1:
+               this.playerMoveDuration = 800
+               this.play('walk')
+               break
+            case 2:
+               this.playerMoveDuration = 600
+               this.anims.msPerFrame = 50
+               break
+            case 3:
+               this.playerMoveDuration = 400
+               this.anims.msPerFrame = 40
+               break
+         }
+      })
+
       this.playerObjectPod.isOnLeftSide.subscribe((isLeftSide) => {
          if (this.isFirstInit) return
          switch (isLeftSide) {
@@ -61,7 +81,7 @@ export class PlayerObjectView extends Physics.Arcade.Sprite {
          ease: 'Linear',
          yoyo: false,
          repeat: 0,
-         duration: PlayerObjectView.MOVE_DURATION,
+         duration: this.playerMoveDuration,
          props: {
             rotation: {
                from: this.rotation,
@@ -82,7 +102,7 @@ export class PlayerObjectView extends Physics.Arcade.Sprite {
          ease: 'Linear',
          yoyo: false,
          repeat: 0,
-         duration: PlayerObjectView.MOVE_DURATION,
+         duration: this.playerMoveDuration,
          props: {
             rotation: {
                from: this.rotation,
@@ -138,6 +158,7 @@ export class PlayerObjectView extends Physics.Arcade.Sprite {
                      y: { from: this.y, to: -10 },
                   },
                   onComplete: () => {
+                     this.anims.stop()
                      this.destroy(true)
                   },
                })
@@ -150,8 +171,9 @@ export class PlayerObjectView extends Physics.Arcade.Sprite {
    }
 
    private disposeAll(): void {
-      this.playerObjectPod.isOnLeftSide.unsubscribe()
-      this.playerObjectPod.playerHp.unsubscribe()
+      this.playerObjectPod.isOnLeftSide?.unsubscribe()
+      this.playerObjectPod.playerHp?.unsubscribe()
+      this.gamePhaseSubscription?.unsubscribe()
       this.scene.input.removeAllListeners()
    }
 
@@ -172,7 +194,6 @@ export class PlayerObjectView extends Physics.Arcade.Sprite {
 
       this.setRotation(PlayerObjectView.RADIAN_PI / 2)
       this.setupAnimations()
-      this.play('walk')
       this.setupSubscribes()
 
       this.playerHealthUIView = new PlayerHealthUIView(this.scene, 'gameObject', this.playerObjectPod)

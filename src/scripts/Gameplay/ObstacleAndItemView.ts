@@ -64,13 +64,17 @@ export default class ObstacleAndItemView extends GameObjects.GameObject {
 
         this.pool = PoolManager.instance
         this.pool.doInit(this.scene)
-        this.pool.createPooler('ObstacleCellView', {
-            classType: ObstacleCellView,
-            maxSize: 10,
-            createCallback: (object: any) => {
-                this.onCreate(object)
-            },
-        })
+
+        if (!this.pool.isHavePoolerGroupWithName('ObstacleCellView')) {
+            this.pool.createPooler('ObstacleCellView', {
+                classType: ObstacleCellView,
+                maxSize: 10,
+                createCallback: (object: any) => {
+                    this.onCreate(object)
+                },
+            })
+        }
+
         this.group = this.pool.getPoolerGroupWithName('ObstacleCellView')
 
         //this.obstacleChecker.body
@@ -153,7 +157,6 @@ export default class ObstacleAndItemView extends GameObjects.GameObject {
         subscription = timer(numberRandom * 1000).subscribe((_) => {
             if (PodProvider.instance.gamePlayUIPod.currentGameplayUIState.value == GameplayUIState.GameResult) return
             if (this.tempCurrentLevel == currentPhase) {
-                console.log(this.group.getLength())
                 let obstacle: ObstacleCellView = this.group.get()
                 obstacle.init(xPosition, this.scene.cameras.main.height, obstacleType, obstacleMoveType)
 

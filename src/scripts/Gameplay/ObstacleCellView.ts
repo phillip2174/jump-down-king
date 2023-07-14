@@ -25,6 +25,7 @@ export default class ObstacleCellView extends Physics.Arcade.Image implements IP
     private yoyoTween: Phaser.Tweens.Tween
 
     private isObjectHide: boolean
+    private speed: number = 0
 
     constructor(scene: Phaser.Scene, x: number, y: number) {
         super(scene, x, y, '')
@@ -57,6 +58,7 @@ export default class ObstacleCellView extends Physics.Arcade.Image implements IP
         this.isObjectHide = false
         this.obstacleType = obstacleType
         this.isHitObstacleTrigger = false
+        this.speed = 0
 
         switch (moveType) {
             case ObstacleMoveType.LeftToRight:
@@ -157,7 +159,22 @@ export default class ObstacleCellView extends Physics.Arcade.Image implements IP
                     this.body.velocity.y = this.gameplayPod.currentGameConfig.speed / 2.5
                 } else {
                     this.body.velocity.x = 0
-                    this.body.velocity.y = this.gameplayPod.currentGameConfig.speed
+
+                    if (this.speed == 0) {
+                        this.body.velocity.y = this.gameplayPod.currentGameConfig.speed
+                        this.speed = this.gameplayPod.currentGameConfig.speed
+                    } else {
+                        this.scene.add.tween({
+                            targets: this.body.velocity,
+                            ease: 'Quart.easeOut',
+                            yoyo: false,
+                            repeat: 0,
+                            duration: 1800,
+                            props: {
+                                y: { from: this.body.velocity.y, to: this.gameplayPod.currentGameConfig.speed },
+                            },
+                        })
+                    }
                 }
             }
         })
